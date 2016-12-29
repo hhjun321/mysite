@@ -41,7 +41,7 @@ def out(request):
 	    
     return index(request)
 	
-
+#test
 def open(request):
     print("cam enter")
     openCam()
