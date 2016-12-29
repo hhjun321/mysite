@@ -1,0 +1,12 @@
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li> <a href="{% url 'polis:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+	<a href="{% url 'polis:out' %}">마루컴퓨터끄기</a>
+	<a href="{% url 'polis:cam' %}">CCTV</a>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
