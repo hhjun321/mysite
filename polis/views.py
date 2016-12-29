@@ -27,6 +27,7 @@ def results(request, question_id):
 def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
 	
+#test중입니다.
 def out(request):
     print("enter")
     ip = '172.30.1.45'
