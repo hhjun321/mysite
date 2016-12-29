@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*- 
+
 from django.http import HttpResponse
 from polis.models import Question
 from django.http import Http404
