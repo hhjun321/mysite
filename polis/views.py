@@ -3,7 +3,6 @@
 from django.http import HttpResponse
 from polis.models import Question
 from django.http import Http404
-from polis.method import shutdown, pingChk, openCam
 
 from django.shortcuts import get_object_or_404, render
 # Create your views here.
@@ -29,23 +28,3 @@ def results(request, question_id):
 def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
 	
-#test중입니다.
-#한번더 
-def out(request):
-    print("enter")
-    ip = '172.30.1.45'
-    res = pingChk(ip)
-    if res==0:
-        print('up')
-        shutdown(ip)
-    else:
-        print('down')        
-        
-	    
-    return index(request)
-	
-#test
-def open(request):
-    print("cam enter")
-    openCam()
-    return HttpResponseRedirect(reverse('polis:index'))

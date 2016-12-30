@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import Photo
 from photo.forms import PhotoEditForm
+from photo.method import shutdown, pingChk, openCam
 # Create your views here.
 
 def single_photo(request, photo_id):
@@ -36,8 +37,40 @@ def index(request):
     if latest_photo_list.count()>0:        
         for photo in latest_photo_list:  
             response_text += '<p><img src="' + photo.image_file.url + '" width=200 height=200/></p>'   
-        print(response_text)
+        print(response_text)    
+        
+    chk = "N"
+    ip = '172.30.1.45'
+    res = pingChk(ip)
+    if res==0:
+        print('up')
+        chk = "Y"
+    else:
+        print('down')        
+    
+    
     context = {'latest_photo_list': latest_photo_list,
-               'response_text': response_text}
+               'response_text': response_text,
+               'chk':chk,}
     return render(request, 'photo/index.html', context)
+
+
+def out(request):
+    print("enter")
+    ip = '172.30.1.45'
+    res = pingChk(ip)
+    if res==0:
+        print('up')
+        shutdown(ip)
+    else:
+        print('down')        
+        
+        
+    return index(request)
+    
+#test
+def open(request):
+    print("cam enter")
+    openCam()
+    return HttpResponseRedirect(reverse('photo:index'))
     

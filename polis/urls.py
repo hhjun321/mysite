@@ -15,10 +15,5 @@ urlpatterns = [
     # /plis/5/vote/
     url(r'^(?P<question_id>\d+)/vote/$', views.vote, name='vote'),
 
-	url(r'^out/$', views.out, name='out'),
-	
-	
-    url(r'^cam/$', views.open, name='cam'),
-
 ]
 
