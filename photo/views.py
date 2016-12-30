@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from .models import Photo
 from photo.forms import PhotoEditForm
 from photo.method import shutdown, pingChk, openCam
+from django.core.urlresolvers import reverse
+from django.http.response import HttpResponseRedirect
 # Create your views here.
 
 def single_photo(request, photo_id):
@@ -59,6 +61,7 @@ def out(request):
     print("enter")
     ip = '172.30.1.45'
     res = pingChk(ip)
+    
     if res==0:
         print('up')
         shutdown(ip)
@@ -66,7 +69,7 @@ def out(request):
         print('down')        
         
         
-    return index(request)
+    return HttpResponseRedirect(reverse('photo:index'))
     
 #test
 def open(request):
