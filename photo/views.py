@@ -32,12 +32,11 @@ def new_photo(request):
     
 def index(request):
     response_text = ""
-    latest_photo_list = get_object_or_404(Photo.order_by('-created_at')[:5])
-    for photo in latest_photo_list:  
-        response_text += '<p>' + str(photo.id) +'번 ... ' + str(photo.id) + '번 사진출력</p>'
-        response_text += '<p>' + photo.image_file.url + '</p>'
-        response_text += '<p><img src="' + photo.image_file.url + '" width=200 height=200/></p>'   
-    print(response_text)
+    latest_photo_list = Photo.objects.order_by('-created_at')[:5]
+    if latest_photo_list.count()>0:        
+        for photo in latest_photo_list:  
+            response_text += '<p><img src="' + photo.image_file.url + '" width=200 height=200/></p>'   
+        print(response_text)
     context = {'latest_photo_list': latest_photo_list,
                'response_text': response_text}
     return render(request, 'photo/index.html', context)
