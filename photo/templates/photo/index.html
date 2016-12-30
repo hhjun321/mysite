@@ -1,7 +1,7 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,8 +58,8 @@
 	    <div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-lg-offset-3">
-					<h4>HELLO PEOPLE, MY NAME IS</h4>
-					<h1>PAUL SILVA</h1>
+					<h4>집 page</h4>
+					<h1>한호준</h1>
 					<h4>WEB DESIGNER, DEVELOPER & GAME ADDICT</h4>
 				</div>
 			</div><! --/row -->
@@ -69,11 +69,12 @@
 	<section id="works"></section>
 	<div class="container">
 		<div class="row centered mt mb">
-			<h1>My Portfolio</h1>
-			
+			<h1>목록</h1>
+			{% if chk == 'Y' %}
 			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
-				<a href="work.html"><img src="{% static 'img/portfolio/folio01.png' %}" class="img-responsive"></a>
+				<a href="{% url 'photo:out' %}"><img src="{% static 'img/com.png' %}" class="img-responsive"></a>
 			</div>
+			{% endif %}
 			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
 				<a href="work.html"><img src="{% static 'img/portfolio/folio02.png' %}" class="img-responsive"></a>
 			</div>
