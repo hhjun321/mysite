@@ -1,0 +1,23 @@
+
+{% if latest_photo_list %}
+    <ul>
+    {% for photo in latest_photo_list %}
+        
+        <!-- <li><img alt="{{ photo.id }}" src="{{ photo.image_file.url}}" width=100 heigth=100> -->
+    {% endfor %}
+    </ul>
+	
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+{% if response_text %}
+<!-- {{ response_text }} -->
+{% autoescape off %}{{ response_text }}{% endautoescape %}
+{% endif%}
+
+
+<a href="{% url 'polis:out' %}">
+	<img src="/uploads/static_files/uploaded/img/computer.jpg" width="100" height="100" alt="마루컴퓨터종료">
+</a>
+
