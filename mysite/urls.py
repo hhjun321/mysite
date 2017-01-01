@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^polis/', include('polis.urls', namespace='polis')),
     url(r'^photo/', include('photo.urls', namespace='photo')),
+    url(r'^main/', include('main.urls', namespace='main')),
 ]
 
 
