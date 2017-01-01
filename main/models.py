@@ -6,7 +6,7 @@ from django.db import models
 class Main(models.Model):
     title_text1 = models.CharField(max_length=20, blank=True)
     title_text2 = models.CharField(max_length=20, blank=True)
-    title_text3 = models.CharField(max_length=20, blank=True)
+    title_text3 = models.CharField(max_length=100, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
     
     def delete(self, *args, **kwargs):
