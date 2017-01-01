@@ -3,6 +3,8 @@ from main.models import Main, MainBanner
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 from gc import get_objects
+import time
+
 
 from main.method import shutdown, pingChk
 # Create your views here.
