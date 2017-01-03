@@ -3,7 +3,6 @@ import paramiko
 import os
 import time
 
-
 def shutdown(host):
     print('start Method')
     

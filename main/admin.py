@@ -5,7 +5,7 @@ from main.models import Main, MainBanner
 # Register your models here.
 class MainInline(admin.TabularInline):
     model = MainBanner
-    extra = 3
+    
 
 
 class MainAdmin(admin.ModelAdmin):

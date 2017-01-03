@@ -10,8 +10,7 @@ class Main(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, auto_now=False)
     
     def delete(self, *args, **kwargs):
-        self.title_image.delete()
-        super(Photo, self).delete(*args, **kwargs)
+        super(Main, self).delete(*args, **kwargs)
    
 class MainBanner(models.Model):
     main  = models.ForeignKey(Main)
@@ -20,3 +19,4 @@ class MainBanner(models.Model):
 
     def __str__(self):
         return self.banner_text
+    
