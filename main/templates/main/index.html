@@ -49,9 +49,6 @@
 				<a href="{% url 'main:out' %}"><img src="{% static 'img/com.png' %}" class="img-responsive"></a>
 			</div>
 			{% endif %}			
-			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
-				<a href="{% url 'main:weather' %}"><img src="{% static 'img/weather.png' %}" class="img-responsive"></a>
-			</div>
 		    {% for banner in main_banner %}
        	 	<div class="col-lg-4 col-md-4 col-sm-4 gallery">
 				<a href="#"><img src="{{ banner.banner_img.url }}" class="img-responsive"></a>

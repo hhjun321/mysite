@@ -7,7 +7,6 @@ import time
 
 
 from main.method import shutdown, pingChk
-from main.TTS_대기정보 import get_text,convert_textTomp3,play_mp3
 # Create your views here.
 def index(request):
     main = Main.objects
@@ -46,12 +45,4 @@ def out(request):
         print('down')        
         
         
-    return HttpResponseRedirect(reverse('photo:index'))
-
-def weather(request):
-    
-    
-    text = get_text()
-    convert_textTomp3(text)
-    play_mp3()
     return HttpResponseRedirect(reverse('photo:index'))
