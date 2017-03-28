@@ -50,6 +50,7 @@ def out(request):
 
 def weather(request):
     
+    
     text = get_text()
     convert_textTomp3(text)
     play_mp3()

@@ -7,7 +7,8 @@ from django.conf import settings
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^out/$', views.out, name='out'),
-    url(r'^weather/$', views.weather, name='weather'),   
+    url(r'^weather/$', views.weather, name='weather'),
+       
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -7,7 +7,6 @@ import urllib.parse
 import pandas as pd
 from bs4 import BeautifulSoup
 
-
 def get_page(url):
     html_string = url
     soup = BeautifulSoup(urlopen(html_string), 'lxml')  # Parse the HTML as a string
