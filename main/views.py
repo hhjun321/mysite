@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+
 from django.shortcuts import render
 from main.models import Main, MainBanner
 from django.http import Http404
