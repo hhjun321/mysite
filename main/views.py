@@ -4,6 +4,7 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404
 from gc import get_objects
 import time
+import os
 
 
 from main.method import shutdown, pingChk
@@ -45,4 +46,10 @@ def out(request):
         print('down')        
         
         
+    return HttpResponseRedirect(reverse('photo:index'))
+
+def weather(request):
+    
+    
+    os.system('python3 /home/pi/python_test/센서_대기/TOUCH_바로실행.py')
     return HttpResponseRedirect(reverse('photo:index'))
