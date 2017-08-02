@@ -4,7 +4,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+PROJECT_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -15,7 +15,7 @@ SECRET_KEY = 'vvvm&u&(cfl$^1=n9cb5*jq0j606*)nm(0xl(24-rpr3x41agh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','172.30.1.31','121.169.179.234']
+ALLOWED_HOSTS = ['localhost','172.30.1.31','121.169.179.234','127.0.0.1']
 
 
 # Application definition
@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'polis',
     'photo',
+    'main',
+    'tts',
 ]
 
 MIDDLEWARE = [
@@ -46,7 +48,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [PROJECT_DIR + "/templates/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,8 +70,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pi_db',
-	'USER': 'root',
+        'NAME': 'pi_db2',
+	'USER': 'admin',
 	'PASSWORD': '93115301',
 	'HOST': 'localhost',
     }
@@ -120,3 +122,5 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded_files')
+
+GOOGLE_MAPS_API_KEY = 'AIzaSyC5swCfPLS9CugnMGicwBKfzJLOljwqqDU'

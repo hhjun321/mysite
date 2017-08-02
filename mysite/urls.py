@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
 from main import views
-
+from tts.views import *
 
 
 urlpatterns = [
@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^polis/', include('polis.urls', namespace='polis')),
     url(r'^photo/', include('photo.urls', namespace='photo')),
     url(r'^main/', include('main.urls', namespace='main')),
+    url(r'^tts/', tts_play),
 ]
 
 
